@@ -2,7 +2,7 @@
   "name": "redux-orm",
   "version": "0.12.2",
   "description": "Simple ORM to manage and query your state trees",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
