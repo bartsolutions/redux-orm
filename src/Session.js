@@ -111,6 +111,10 @@ const Session = class Session {
         return result;
     }
 
+    idExists(tableName, id) {
+        return this.db.idExists(tableName, id, this.state);
+    }
+
     _getTransaction(updateSpec) {
         const { withMutations } = this;
         const { action } = updateSpec;

@@ -345,9 +345,7 @@ const Model = class Model {
      * @since 0.11.0
      */
     static idExists(id) {
-        return this.exists({
-            [this.idAttribute]: id,
-        });
+        return this.session.idExists(this.modelName, id);
     }
 
     /**

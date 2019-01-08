@@ -26,6 +26,11 @@ function query(tables, querySpec, state) {
     };
 }
 
+function idExists(tables, tableName, id, state) {
+    const table = tables[tableName];
+    return table.idExists(state[tableName], id);
+}
+
 function update(tables, updateSpec, tx, state) {
     const { action, payload } = updateSpec;
 
@@ -78,6 +83,7 @@ export function createDatabase(schemaSpec) {
     return {
         getEmptyState,
         query: query.bind(null, tables),
+        idExists: idExists.bind(null, tables),
         update: update.bind(null, tables),
         // Used to inspect the schema.
         describe: tableName => tables[tableName],
